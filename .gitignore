@@ -132,7 +132,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-B7/.env
+.env
 .venv
 env/
 venv/
