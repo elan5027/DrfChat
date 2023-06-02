@@ -12,13 +12,13 @@ class RoomView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # 유저가 속해있는 채팅룸 조회기능1
+        # 유저가 속해있는 채팅룸 조회기능
         user_chat_room = RoomJoin.objects.filter(user_id=request.user.id)
         room_info = {}
         for chat_room in user_chat_room:
             room_id = chat_room.room_id.id
             chat_user_list = RoomJoin.objects.filter(room_id=room_id)
-            # 쿼리셋을 만드는게 아니라 최초 불러올떄 쿼리를 불러올수있다.111
+            # 쿼리셋을 만드는게 아니라 최초 불러올떄 쿼리를 불러올수있다.
             room_user_list = []
             for user_list in chat_user_list:
                 username = user_list.user_id.email
