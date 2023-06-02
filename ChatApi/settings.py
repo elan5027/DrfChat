@@ -35,7 +35,6 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     #3rd party
-    'daphne'
     'channels',
     'rest_framework',
     'rest_framework_simplejwt',
