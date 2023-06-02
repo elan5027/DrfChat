@@ -3,7 +3,8 @@ from users.models import User
 from channels.db import database_sync_to_async
 from channels.middleware import BaseMiddleware
 from ChatApi.settings import SIMPLE_JWT, SECRET_KEY
-
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChatApi.settings')
 
 @database_sync_to_async
 def get_user(token_key):
