@@ -1,10 +1,8 @@
-import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChatApi.settings')
+
 from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter
 from chat.channelsmiddleware import TokenAuthMiddleware
 import chat.routing
-
 
 
 application = ProtocolTypeRouter({
