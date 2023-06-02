@@ -41,6 +41,7 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(required=True, write_only=True)
 
     def validate(self, data):
+        print(data)
         user = authenticate(**data)
         if user:
             set_token = MyTokenObtainPairSerializer.get_token(user)

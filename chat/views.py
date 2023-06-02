@@ -18,7 +18,7 @@ class RoomView(APIView):
         for chat_room in user_chat_room:
             room_id = chat_room.room_id.id
             chat_user_list = RoomJoin.objects.filter(room_id=room_id)
-
+            # 쿼리셋을 만드는게 아니라 최초 불러올떄 쿼리를 불러올수있다.
             room_user_list = []
             for user_list in chat_user_list:
                 username = user_list.user_id.email
@@ -61,7 +61,7 @@ class ChatRoom(APIView):
         try:
             check_room = RoomJoin.objects.get(user_id=request.user.id, room_id=room_id)
             message = Message.objects.filter(room_id=room_id)
-            # 프로필이미지 출력하려면 추가.
+            # 프로필이미지 출력하려면 추가. 추가 추가
 
             return Response(message, status=200)
 
