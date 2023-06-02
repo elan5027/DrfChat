@@ -55,7 +55,7 @@ class LoginSerializer(serializers.Serializer):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    # 유저의 프로필을 색인 작업할 pk값 입력받기. 추후 닉네임 부분 수정 부분 추가.1111
+    # 유저의 프로필을 색인 작업할 pk값 입력받기. 추후 닉네임 부분 수정 부분 추가.1111333
     class Meta:
         model = Profile
         fields = "__all__"
