@@ -12,7 +12,7 @@ class RoomView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # 유저가 속해있는 채팅룸 조회기능
+        # 유저가 속해있는 채팅룸 조회기능1
         user_chat_room = RoomJoin.objects.filter(user_id=request.user.id)
         room_info = {}
         for chat_room in user_chat_room:
