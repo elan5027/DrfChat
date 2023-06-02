@@ -120,7 +120,7 @@ SIMPLE_JWT = {
 }
 
 WSGI_APPLICATION = 'ChatApi.wsgi.application'
-ASGI_APPLICATION = 'ChatApi.asgi.application'
+
 CHANNEL_HOSTS = os.getenv('CHANNEL_HOSTS')
 CHANNEL_PORT = int(os.getenv('CHANNEL_PORT'))
 CHANNEL_LAYERS = {
@@ -184,3 +184,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+ASGI_APPLICATION = 'ChatApi.asgi.application'
