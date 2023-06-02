@@ -2,7 +2,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 from users.models import User
 from channels.db import database_sync_to_async
 from channels.middleware import BaseMiddleware
-from ChatApi.settings import SIMPLE_JWT, SECRET_KEY
+
 #11122
 
 @database_sync_to_async
