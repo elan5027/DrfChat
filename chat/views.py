@@ -61,7 +61,7 @@ class ChatRoom(APIView):
         try:
             check_room = RoomJoin.objects.get(user_id=request.user.id, room_id=room_id)
             message = Message.objects.filter(room_id=room_id)
-            # 프로필이미지 출력하려면 추가. 추가 추가요1322211
+            # 프로필이미지 출력하려면 추가. 추가 추가요132221122
 
             return Response(message, status=200)
 
