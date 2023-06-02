@@ -1,5 +1,3 @@
-from django.contrib.auth.models import AnonymousUser
-
 from rest_framework_simplejwt.tokens import AccessToken
 from users.models import User
 from channels.db import database_sync_to_async
@@ -14,12 +12,12 @@ def get_user(token_key):
         user_id = access_token.get('user_id', None)
 
     except user_id is None:
-        return AnonymousUser()
+        return None
 
     try:
         return User.objects.get(id=user_id)
     except User.DoesNotExist:
-        return AnonymousUser()
+        return None
 
 
 class TokenAuthMiddleware(BaseMiddleware):
@@ -32,6 +30,6 @@ class TokenAuthMiddleware(BaseMiddleware):
 
         except ValueError:
             token_key = None
-        scope['user'] = AnonymousUser() if token_key is None else await get_user(token_key)
+        scope['user'] = None if token_key is None else await get_user(token_key)
 
         return await super().__call__(scope, receive, send)
