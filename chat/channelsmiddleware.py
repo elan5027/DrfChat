@@ -1,3 +1,5 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChatApi.settings')
 from rest_framework_simplejwt.tokens import AccessToken
 from users.models import User
 from channels.db import database_sync_to_async
