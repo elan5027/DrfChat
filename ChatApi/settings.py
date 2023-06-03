@@ -35,6 +35,7 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     #3rd party
+    'daphne',
     'channels',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -161,7 +162,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization1
+# Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'ko-kr'
